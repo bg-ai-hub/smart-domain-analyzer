@@ -1,0 +1,165 @@
+{
+  "Domain": "FoodOrderingPlatform",
+  "Subdomains": [
+    {
+      "name": "UserManagement",
+      "BoundedContexts": [
+        {
+          "name": "Users",
+          "Aggregates": [
+            {
+              "name": "User",
+              "Entities": [
+                {
+                  "name": "UserEntity",
+                  "Attributes": [
+                    {
+                      "name": "Id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "Email",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "PhoneNumber",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "PasswordHash",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "LoginToken",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "CreatedAt",
+                      "data_type": "datetime",
+                      "description": ""
+                    },
+                    {
+                      "name": "UpdatedAt",
+                      "data_type": "datetime",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RestaurantManagement",
+      "BoundedContexts": [
+        {
+          "name": "Restaurants",
+          "Aggregates": [
+            {
+              "name": "Restaurant",
+              "Entities": [
+                {
+                  "name": "RestaurantEntity",
+                  "Attributes": [
+                    {
+                      "name": "Id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "Name",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "Description",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "Address",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "PhoneNumber",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "Email",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "MenuId",
+                      "data_type": "int",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OrderPlacement",
+      "BoundedContexts": [
+        {
+          "name": "Orders",
+          "Aggregates": [
+            {
+              "name": "Order",
+              "Entities": [
+                {
+                  "name": "OrderEntity",
+                  "Attributes": [
+                    {
+                      "name": "Id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "UserId",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "RestaurantId",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "OrderDate",
+                      "data_type": "datetime",
+                      "description": ""
+                    },
+                    {
+                      "name": "TotalCost",
+                      "data_type": "decimal",
+                      "description": ""
+                    },
+                    {
+                      "name": "Status",
+                      "data_type": "string",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

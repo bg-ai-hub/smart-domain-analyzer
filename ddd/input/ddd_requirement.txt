@@ -1,0 +1,35 @@
+Overview:
+The company plans to build an online food ordering and delivery platform to connect users with restaurants in their locality. The platform will support browsing menus, placing orders, making payments, and tracking deliveries.
+
+Functional Requirements
+User Registration and Login
+Users must be able to sign up using email or phone number.
+Passwords should be securely stored.
+OTP-based login should be available for faster access.
+
+Restaurant Management
+Restaurants can register and create a profile.
+Each restaurant can manage its own menu, which includes categories like Starters, Main Course, Desserts, and Beverages.
+Restaurants can define pricing, item availability, and preparation time.
+
+Order Placement
+Users can browse nearby restaurants filtered by location and cuisine.
+Users can add menu items to the cart and place an order.
+Special instructions can be added for each item.
+
+Payment Integration
+Users can pay via UPI, credit/debit card, or wallet.
+Discounts and promo codes should be applicable.
+
+Order Tracking
+Once the order is placed, users can track the delivery status in real time.
+Status updates: Order Confirmed → Preparing → Out for Delivery → Delivered.
+
+Delivery Partner Module
+Delivery partners can log in and view assigned orders.
+Each partner can update order status upon pickup and delivery.
+Location tracking must be enabled during active delivery.
+
+Review and Rating
+Users can rate restaurants and delivery partners after the order is completed.
+Reviews are visible on the restaurant’s profile.
