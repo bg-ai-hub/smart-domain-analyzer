@@ -30,7 +30,11 @@ prompt = PromptTemplate(
     template="""
 From the following business requirement, extract the Domain-Driven Design (DDD) structure in **valid JSON format only**.
 - Do NOT include explanations, markdown, or natural language descriptions outside of the JSON.
+- Aggregate is non mandatory, but if it is present, it should be included.
+- For each aggregate, include **at least 2 relevant entities** if available in the requirement text or can be reasonably inferred.
 - For each entity, include **at least 8 relevant attributes** if available in the requirement text or can be reasonably inferred.
+- Use the following JSON structure:
+- The JSON should be **valid** and **well-structured**.
 
 Business Requirement:
 {requirement_text}
