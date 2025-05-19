@@ -1,14 +1,124 @@
 {
-  "Domain": "Food Ordering Platform",
+  "Domain": "Ordering",
   "Subdomains": [
     {
-      "name": "Order Placement",
+      "name": "User Management",
       "BoundedContexts": [
         {
-          "name": "Order Placing",
+          "name": "Authentication",
           "Aggregates": [
             {
-              "name": "Order",
+              "name": "Users",
+              "Entities": [
+                {
+                  "name": "User",
+                  "Attributes": [
+                    {
+                      "name": "id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "email",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "phone_number",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "password_hash",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "otp_token",
+                      "data_type": "string",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Registration",
+          "Aggregates": [
+            {
+              "name": "Registrations",
+              "Entities": [
+                {
+                  "name": "RegistrationRequest",
+                  "Attributes": [
+                    {
+                      "name": "user_id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "email",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "phone_number",
+                      "data_type": "string",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Restaurant Management",
+      "BoundedContexts": [
+        {
+          "name": "Menu Management",
+          "Aggregates": [
+            {
+              "name": "Menus",
+              "Entities": [
+                {
+                  "name": "MenuItem",
+                  "Attributes": [
+                    {
+                      "name": "id",
+                      "data_type": "int",
+                      "description": ""
+                    },
+                    {
+                      "name": "category",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "item_name",
+                      "data_type": "string",
+                      "description": ""
+                    },
+                    {
+                      "name": "price",
+                      "data_type": "decimal",
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Order Management",
+          "Aggregates": [
+            {
+              "name": "Orders",
               "Entities": [
                 {
                   "name": "OrderItem",
@@ -27,31 +137,6 @@
                       "name": "quantity",
                       "data_type": "int",
                       "description": ""
-                    },
-                    {
-                      "name": "price",
-                      "data_type": "float",
-                      "description": ""
-                    }
-                  ]
-                },
-                {
-                  "name": "User",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "username",
-                      "data_type": "string",
-                      "description": ""
-                    },
-                    {
-                      "name": "email",
-                      "data_type": "string",
-                      "description": ""
                     }
                   ]
                 }
@@ -62,61 +147,16 @@
       ]
     },
     {
-      "name": "Payment Integration",
+      "name": "Delivery Management",
       "BoundedContexts": [
         {
-          "name": "Payment Processing",
+          "name": "Delivery Tracking",
           "Aggregates": [
             {
-              "name": "Payment",
+              "name": "Deliveries",
               "Entities": [
                 {
-                  "name": "PaymentMethod",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "type",
-                      "data_type": "string",
-                      "description": ""
-                    }
-                  ]
-                },
-                {
-                  "name": "UserPayment",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "payment_method_id",
-                      "data_type": "int",
-                      "description": ""
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Order Tracking",
-      "BoundedContexts": [
-        {
-          "name": "Order Status",
-          "Aggregates": [
-            {
-              "name": "OrderStatus",
-              "Entities": [
-                {
-                  "name": "OrderStatusHistory",
+                  "name": "Delivery",
                   "Attributes": [
                     {
                       "name": "id",
@@ -131,91 +171,6 @@
                     {
                       "name": "status",
                       "data_type": "string",
-                      "description": ""
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Delivery Partner Module",
-      "BoundedContexts": [
-        {
-          "name": "Delivery Management",
-          "Aggregates": [
-            {
-              "name": "OrderAssignment",
-              "Entities": [
-                {
-                  "name": "OrderAssignmentHistory",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "order_id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "partner_id",
-                      "data_type": "int",
-                      "description": ""
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Review and Rating",
-      "BoundedContexts": [
-        {
-          "name": "Restaurant Reviews",
-          "Aggregates": [
-            {
-              "name": "OrderReview",
-              "Entities": [
-                {
-                  "name": "UserReview",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "order_id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "rating",
-                      "data_type": "float",
-                      "description": ""
-                    }
-                  ]
-                },
-                {
-                  "name": "RestaurantReview",
-                  "Attributes": [
-                    {
-                      "name": "id",
-                      "data_type": "int",
-                      "description": ""
-                    },
-                    {
-                      "name": "restaurant_id",
-                      "data_type": "int",
                       "description": ""
                     }
                   ]
