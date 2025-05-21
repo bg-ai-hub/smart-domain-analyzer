@@ -103,7 +103,7 @@ Return a JSON object in this format:
 
 {DDD_JSON_STRUCTURE}
 """
-    )
+    ) 
 '''
 def get_prompt_template():
     print("[INFO] Calling get_prompt_template")
@@ -215,7 +215,7 @@ def main():
     llm_chain = create_llm_chain(llm, prompt)
     extracted_data = extract_ddd_structure(chunks, llm_chain)
     save_extracted_data(extracted_data, output_file_path)
-    fix_and_merge_json_file(output_file_path, formatted_output_file_path, llm)
+    fix_and_merge_json_file(output_file_path, output_file_path, llm)
     print("[INFO] Finished main")
 
 if __name__ == "__main__":
